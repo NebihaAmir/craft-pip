@@ -1,15 +1,19 @@
 pipeline {
      agent any
+     	
          stages {
              stage('Build') {
                  steps {
+                 	 echo "PATH = ${mvn}/bin:$PATH:$mvn/bin"
+                 	 echo "mvn = opt/homebrew/Cellar/maven/3.8.5/libexec"
+                 	 
                      echo 'Application is in Building Phase'
                      sh 'mvn clean install'
                      }
                  }
              stage('Test') {
                  steps {
-
+				
                      
                      echo 'Application is in Testing Phase'
                      sh 'mvn test'
