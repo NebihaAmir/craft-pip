@@ -29,6 +29,20 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				
+			<configuration>
+		        <cloudHubDeployment>
+		            <uri>https://anypoint.mulesoft.com</uri>
+		            <muleVersion>${muleVersion}</muleVersion>
+		            <username>${username}</username>
+		            <password>${password}</password>
+		            <applicationName>vanchiv-ci-cd-demo</applicationName>
+		            <environment>Sandbox</environment>
+		            <workerType>${workerType}</workerType>
+		            <workers>${workers}</workers>
+		            <objectStoreV2>true</objectStoreV2>
+		        </cloudHubDeployment>
+	    </configuration>
 			</plugin>
 		</plugins>
 	</build>
