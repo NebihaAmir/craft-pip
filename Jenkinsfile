@@ -9,10 +9,7 @@ pipeline {
                  }
              stage('Test') {
                  steps {
-                 
-                	export mvn=/opt/homebrew/Cellar/maven/3.8.5/libexec
-					export PATH=$PATH:$mvn/bin
-					mvn --version
+
                      
                      echo 'Application is in Testing Phase'
                      sh 'mvn test'
