@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c106b072-fa07-4851-a62c-6cb49e5ba145" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="craft-pipFlow" doc:id="0acd558e-dc7c-4329-9a70-cb8d6657a009" >
+		<http:listener doc:name="Listener" doc:id="ca89c110-1aa1-405e-97f5-f3460b47d9dd" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="Hello World" doc:name="Set Payload" doc:id="b28811b6-abcf-4a76-9931-df31ca3c5484" />
+	</flow>
+</mule>
