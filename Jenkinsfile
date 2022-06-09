@@ -1,17 +1,15 @@
 pipeline {
      agent any
-     
-     stages {
-        stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "mvn = /opt/homebrew/Cellar/maven/3.8.5/libexec"
-                ''' 
-            }
-        }
      	
          stages {
+         	stage ('Initialize') {
+	            steps {
+	                sh '''
+	                    echo "PATH = ${PATH}"
+	                    echo "M2_HOME = ${M2_HOME}"
+	                ''' 
+	            }
+       		 }
              stage('Build') {
                  steps {
                  	 
