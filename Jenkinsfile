@@ -6,7 +6,7 @@ pipeline {
 	            steps {
 	                sh '''
 	                    echo "PATH = ${PATH}"
-	                    echo "M2_HOME = ${M2_HOME}"
+	                    echo "mvn = /opt/homebrew/Cellar/maven/3.8.5/libexec"
 	                ''' 
 	            }
        		 }
