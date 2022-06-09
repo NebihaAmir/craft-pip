@@ -1,8 +1,15 @@
 pipeline {
      agent any
-     	tools {
-     		mvn 'Maven 3.8.5'
-     	}
+     
+     stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "mvn = /opt/homebrew/Cellar/maven/3.8.5/libexec"
+                ''' 
+            }
+        }
      	
          stages {
              stage('Build') {
